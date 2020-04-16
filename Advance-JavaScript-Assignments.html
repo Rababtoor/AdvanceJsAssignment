@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance JavaScript Assignments</title>
+</head>
+<body>
+    <h1>Variable</h1>
+    <h3>Examples</h3>
+
+<script>  
+var x = 1;
+
+if (x === 1) {
+  let y = 2;
+
+  console.log(y);
+  // expected output: 2
+}
+
+console.log(x);
+// expected output: 1
+
+var x = 'global';
+let y = 'global';
+console.log(this.x); // "global"
+console.log(this.y); // undefined
+
+</script>
+<h3>Template Literals</h3>
+<script>
+  let userName = `Rabab Iqbal Toor`;
+  let date = new Date().toDateString();
+  let coverLetter = `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus`
+  console.log (userName  + '\n' +'\n' +  coverLetter + '\n' +'\n' + date);
+</script>
+<h3>String</h3>
+<script>
+  let str1=`Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo tibus et magnis dis parturient montes, nascetur ridiculus mus. 
+  Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, 
+  vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. 
+  Cras dapibus. Vivamus elementum se Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+   dapibus in, viverra quis,`
+   console.log(str1);
+</script>
+
+
+</body>
+</html>
