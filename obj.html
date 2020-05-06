@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <div>
+      <input type="text" id="todo" name="list" placeholder="add to do list here">
+     <button onclick='newElement()'> Add</button>
+    </div>
+   
+    <div>
+        <ul id=#mylist>
+            <li>Hit the Gym </li>
+            <li>Read a Book </li>
+            <li>Do coding practice </li>
+            <li>Cook food </li>
+        </ul>
+    </div>
+ 
+    <div id="clock" onload="showTime()">
+
+    </div>
+
+<script>
+
+   function showTime(){
+    var a = new Date();
+    var hr = a.getHours();
+    var min = a.getMinutes();
+    var sec = a.getSeconds();
+    var time = hr + ":" + min +":" + sec ;
+    document.getElementById('clock').innerHTML= time;
+    document.getElementById('clock').textContent = time;
+
+    setTimeout(showTime, 1000);
+
+   }
+   showTime();
+</script>
+
+<script>
+    var list = document.getElementsByTagName('li');//yeha pe ul list kay items ko grab kiya hai. by tag name i.e. li
+   for(var i=0; i<list.length; i++){
+       var span = document.createElement('span');//span create kiya hai
+       var btn = document.createElement('BUTTON');//button create kiya hai
+       var text = document.createTextNode('edit');//us button kay oper nam likha hai i.e. edit
+       btn.appendChild(text)//button aur uskay name ko append kiya hai
+       span.className="edt"//span ko ek class di hai jiska name hai edt
+       span.appendChild(btn);//span kay sath btn ko append kiya hai 
+       list[i].appendChild(span);//ab list main jitnay bhi item honagy unkay agay edit ka button ata jayega
+       var sp = document.createElement('span');
+       var bt = document.createElement('BUTTON');
+       var tex = document.createTextNode('Del');
+       bt.appendChild(tex);
+       sp.appendChild(bt);
+       list[i].append(sp);
+   }
+
+   function newElement(){
+     var li = document.createElement('LI');//list create ki hai 
+     var input = document.querySelector('#todo').value;//ek variable create kiya hai jo input ki value ko grab kar kay la raha hai via id 
+     var t = document.createTextNode(input)//varible input ko text assign kiya hai input ka 
+     li.appendChild(t)//ab li ko append kardiya hai input s=kay sath yani jab kuch likha jayega input main wo li main add hota jayega 
+     if (input === ""){
+         alert('write something');
+     }else{
+         document.getElementById('#mylist').appendChild(li);
+     }
+
+   }
+  
+
+   
+</script>
+
+</body>
+</html>
